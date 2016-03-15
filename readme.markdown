@@ -29,12 +29,17 @@ The Huzzah ESP8266 board will connect to your wifi, then connect to your Adafrui
 
 
 ## How Do I Build It?
-### Parts
+### Parts + Assembly
 You can get all of the parts for EXTROVRT at this [wishlist](https://www.adafruit.com/wishlists?wid=391765) here. I've included M4 nuts + bolts, although you may already have those or wish to use some sort of imperially-measured malarky.
 
 You need two batteries/battery systems: a 3.3V LiPo to power the Huzzah! board, and something >5V to power the servo board. On the wishlist above, you'll see a 4xAA battery holder, and a 5V step-down UBEC to convert power to an even 5V / 3A. On my particular robot, I opted for a 2S (~7.3V) LiPo battery instead of the 4xAA holder, but that's only because I have those batteries (and chargers) lying about from other projects. If you have RC batteries, you may prefer to use those, but if you don't it's generally easier to stick with AA, because everybody has those.
 
-The entire robot is built around [this anodyzed aluminum chassis](https://www.adafruit.com/products/2943), two continuous-rotation micro servos with matching wheels, and a swivel-wheel for the front. The parts that hold the phone/tablet are all 3d-printed and bolted on.
+Electronics-wise, you plug the servo "wing" on top of the Feather Huzzah! Then you plug your left servo motor into position "0", and the right motor into position "1". Make sure to note which end is the signal end (the yellow one)! For power, plug the output of the UBEC into the servo wing (I [used jumpers](Images/DSC_1713.JPG) from the 3-pin servo cable), and your 3.7V LiPo battery into the Huzzah!
+
+Physically, the entire robot is built around [this anodyzed aluminum chassis](https://www.adafruit.com/products/2943), two continuous-rotation micro servos with matching wheels, and a swivel-wheel for the front. The parts that hold the phone/tablet are all 3d-printed and bolted on (see below for details).
+
+### Arduino
+The Arduino files are in the `Arduino` folder. You just have to modify them to match your WiFi network SSID/password, and your particular Adafruit IO feed information. If you don't know how to upload Arduino code to the board, [this tutorial](https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/overview) is exceedingly helpful.
 
 ### 3D Printing
 The CAD sources for the 3D-printed files are publicly available at [OnShape](https://cad.onshape.com/documents/d73cca1ae031f4b278264cff/w/0abe2b13ef53c6019a28a62a), which is handy if you want to fiddle with the models for your own setup.
@@ -42,6 +47,3 @@ The CAD sources for the 3D-printed files are publicly available at [OnShape](htt
 I've also included the STL models and the [Simplify3D](https://www.simplify3d.com/) print setup files for a [PrintrBot Simple Metal](http://printrbot.com/shop/assembled-simple-metal/) in the `Models` and `Print Setup` folders, if you've got the same setup as me or use Simplify3D and want a starting point. I was able to print the entire thing within one 150mm square build plate.
 
 I also had some luck making my own 3d-printed [Hex Standoffs](https://cad.onshape.com/documents/a721d24ec3e00633c0a5e028/w/56f9fc784b3159de2bad2fdf/e/3c67c912763ba927c46253c3), which is one fewer part you have to purchase if you have your own printer. Yes, I used imperial bolts (4/40) for that particular one, because I ran out of nice metric ones. But they should work with M3 bolts as well. And once again, it's OnShape, so it's easy to go + change dimensions and make your own - the model is fully parametric. You should be able to print them sideways on your build plate - it worked fine for me with no supports.
-
-### Arduino
-The Arduino files are in the `Arduino` folder. You just have to modify them to match your WiFi network SSID/password, and your particular Adafruit IO feed information. If you don't know how to upload Arduino code to the board, [this tutorial](https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/overview) is exceedingly helpful.
