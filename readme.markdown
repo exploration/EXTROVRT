@@ -1,7 +1,7 @@
 # EXTROVRT
 (EXplo Telepresence RObot Via the inteRneT)
 
-![Images/EXTROVRT.jpg](Glamour shot of the EXTROVRT robot)
+![Glamour shot of the EXTROVRT robot](Images/EXTROVRT.JPG)
 
 
 ## What Is It?
@@ -17,11 +17,11 @@ This approach also has the benefit of allowing us to use whichever video chat cl
 ## How Does It Work?
 The way it works is this: You set up a "feed" on [Adafruit IO](http://adafruit.io) as such:
 
-![Images/Adafruit_IO_Feed_Setup.png](Adafruit IO Feed Setup - Buttons with "F","B","L","R", and "S" values).
+![Adafruit IO Feed Setup - Buttons with "F","B","L","R", and "S" values](Images/Adafruit_IO_Feed_Setup.png)
 
 Each button is mapped to a simple value: `F` for `Forward`, `B` for `Back`, `R` for `Right`, `L` for `Left`, and `S` for `Stop`. Each button is set up to send `S` when it is let go:
 
-![Images/Adafruit_IO_Button_Setup.png](Adafruit IO Button Setup)
+![Adafruit IO Button Setup](Images/Adafruit_IO_Button_Setup.png)
 
 The Huzzah ESP8266 board will connect to your wifi, then connect to your Adafruit IO feed using [MQTT](https://learn.adafruit.com/mqtt-adafruit-io-and-you/overview). It monitors the feed for changes in direction, and sends motor information to the servos through the servo board. In practice, this all happens very darned close to real-time: close enough to work great! Until you hit the Adafruit IO API limit :/ But for the price of free, who's complaining?
 
