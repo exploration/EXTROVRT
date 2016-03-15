@@ -42,6 +42,8 @@ Physically, the entire robot is built around [this anodyzed aluminum chassis](ht
 The Arduino files are in the `Arduino` folder. You just have to modify them to match your WiFi network SSID/password, and your particular Adafruit IO feed information. If you don't know how to upload Arduino code to the board, [this tutorial](https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/overview) is exceedingly helpful.
 
 ### 3D Printing
+Everything that's orange in the picutres is a 3d-printed thing. You'll need to print your own copy of those. You want two of the "arms", one top plate, and one base.
+
 The CAD sources for the 3D-printed files are publicly available at [OnShape](https://cad.onshape.com/documents/d73cca1ae031f4b278264cff/w/0abe2b13ef53c6019a28a62a), which is handy if you want to fiddle with the models for your own setup.
 
 I've also included the STL models and the [Simplify3D](https://www.simplify3d.com/) print setup files for a [PrintrBot Simple Metal](http://printrbot.com/shop/assembled-simple-metal/) in the `Models` and `Print Setup` folders, if you've got the same setup as me or use Simplify3D and want a starting point. I was able to print the entire thing within one 150mm square build plate.
