@@ -17,7 +17,7 @@ This approach also has the benefit of allowing us to use whichever phone/tablet,
 
 
 ## How Does It Work?
-The way it works is this: You set up a "feed" on [Adafruit IO](http://adafruit.io) as such:
+The way it works is this: You [set up a feed](https://learn.adafruit.com/adafruit-io-basics-feeds/overview) on [Adafruit IO](http://adafruit.io) as such:
 
 ![Adafruit IO Feed Setup - Buttons with "F","B","L","R", and "S" values](Images/Adafruit_IO_Feed_Setup.png)
 
