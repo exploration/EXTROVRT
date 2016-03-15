@@ -5,7 +5,7 @@
 
 
 ## What Is It?
-EXTROVRT is a telepresence robot controlled via [Adafruit IO](http://adafruit.io)'s MQTT service, which uses the [Adafruit Feather](https://www.adafruit.com/categories/777) [Feather Huzzah ESP8266](https://www.adafruit.com/products/2821) and [Servo Featherwing](https://www.adafruit.com/products/2928) as the main control boards. We also have a [custom control interface](https://bitbucket.org/explo/extrovrt) written in Sinatra which lets us use the keyboard to drive instead of the mouse.
+EXTROVRT is a telepresence robot controlled via [Adafruit IO](http://adafruit.io)'s MQTT service, which uses [Adafruit Feather](https://www.adafruit.com/categories/777) stuff: the [Feather Huzzah ESP8266](https://www.adafruit.com/products/2821) and [Servo Featherwing](https://www.adafruit.com/products/2928) as the main control boards. We also have a [custom control interface](https://bitbucket.org/explo/extrovrt) written in Sinatra which lets us use the keyboard to drive instead of the mouse.
 
 EXTROVRT came about because we have a [Double Robot](http://www.doublerobotics.com/) which was given to us, which we love and is a real hoot. However, it was going to require a brand-new iPad to upgrade. We figured that we could achieve 90% of the functionality of a Double for about 5% of the cost. We set the goal of a robot that could drive around using commodity servo hardware, and hold a phone, iPod touch, iPad, or the like. This would allow us to "turn our head" in virtual meetings, and even drive around a bit, probably mostly on tables.
 
