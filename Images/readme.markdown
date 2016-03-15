@@ -1,0 +1,8 @@
+![Front](Images/EXTROVRT.JPG)
+![Back Left Corner View](Images/DSC_1708.JPG)
+![Back Left with Phone View](Images/DSC_1711.JPG)
+![Electronics Detail](Images/DSC_1712.JPG)
+![Rear View](Images/DSC_1713.JPG)
+![Back Right View](Images/DSC_1714.JPG)
+![Front View](Images/DSC_1715.JPG)
+![Bottom View](Images/DSC_1716.JPG)
