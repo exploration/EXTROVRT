@@ -23,7 +23,7 @@ Each button is mapped to a simple value: `F` for `Forward`, `B` for `Back`, `R` 
 
 ![Images/Adafruit_IO_Button_Setup.png](Adafruit IO Button Setup)
 
-The Huzzah ESP8266 board will connect to your wifi, then connect to your Adafruit IO feed. It monitors the feed for changes in direction, and sends motor information to the servos through the servo board. In practice, this all happens very darned close to real-time: close enough to work great! Until you hit the Adafruit IO API limit :/ But for the price of free, who's complaining?
+The Huzzah ESP8266 board will connect to your wifi, then connect to your Adafruit IO feed using [MQTT](https://learn.adafruit.com/mqtt-adafruit-io-and-you/overview). It monitors the feed for changes in direction, and sends motor information to the servos through the servo board. In practice, this all happens very darned close to real-time: close enough to work great! Until you hit the Adafruit IO API limit :/ But for the price of free, who's complaining?
 
 
 ## How Do I Build It?
