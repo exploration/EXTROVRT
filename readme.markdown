@@ -3,6 +3,8 @@
 
 ![Glamour shot of the EXTROVRT robot](Images/EXTROVRT.JPG)
 
+(more photos in the [Images](Images/) directory)
+
 
 ## What Is It?
 EXTROVRT is a telepresence robot controlled via [Adafruit IO](http://adafruit.io)'s MQTT service, which uses [Adafruit Feather](https://www.adafruit.com/categories/777) stuff: the [Feather Huzzah ESP8266](https://www.adafruit.com/products/2821) and [Servo Featherwing](https://www.adafruit.com/products/2928) as the main control boards. We also have a [custom control interface](https://bitbucket.org/explo/extrovrt) written in Sinatra which lets us use the keyboard to drive instead of the mouse.
