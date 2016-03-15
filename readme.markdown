@@ -30,7 +30,7 @@ The Huzzah ESP8266 board will connect to your wifi, then connect to your Adafrui
 ### Parts
 You can get all of the parts for EXTROVRT at this [wishlist](https://www.adafruit.com/wishlists?wid=391765) here. I've included M4 nuts + bolts, although you may already have those or wish to use some sort of imperially-measured malarky.
 
-You need two batteries/battery systems: a 3.3V LiPo to power the Huzzah! board, and something >5V to power the servo board. On the wishlist above, you'll see a 4xAA battery holder, and a 5V step-down UBEC to convert power to an even 5V / 3A. On my particular robot, I opted for a 2S LiPo battery instead of the 4xAA holder, but that's only because I have those batteries (and chargers) lying about from other projects. If you have RC batteries, you may prefer to use those, but if you don't it's generally easier to stick with AA, because everybody has those.
+You need two batteries/battery systems: a 3.3V LiPo to power the Huzzah! board, and something >5V to power the servo board. On the wishlist above, you'll see a 4xAA battery holder, and a 5V step-down UBEC to convert power to an even 5V / 3A. On my particular robot, I opted for a 2S (~7.3V) LiPo battery instead of the 4xAA holder, but that's only because I have those batteries (and chargers) lying about from other projects. If you have RC batteries, you may prefer to use those, but if you don't it's generally easier to stick with AA, because everybody has those.
 
 The entire robot is built around [this anodyzed aluminum chassis](https://www.adafruit.com/products/2943), two continuous-rotation micro servos with matching wheels, and a swivel-wheel for the front. The parts that hold the phone/tablet are all 3d-printed and bolted on.
 
