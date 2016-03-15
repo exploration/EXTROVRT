@@ -1,5 +1,5 @@
 # EXTROVRT
-(EXplo Telepresence RObot Via the inteRneT)
+([EXplo](http://www.explo.org) Telepresence RObot Via the inteRneT)
 
 ![Glamour shot of the EXTROVRT robot](Images/EXTROVRT.JPG)
 
