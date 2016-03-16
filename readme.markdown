@@ -17,11 +17,13 @@ This approach also has the benefit of allowing us to use whichever phone/tablet,
 
 
 ## How Does It Work?
-The way it works is this: You [set up a feed](https://learn.adafruit.com/adafruit-io-basics-feeds/overview) on [Adafruit IO](http://adafruit.io) as such:
+**Note:** If you want multiple EXTROVRTs, you might want to check out our [control software](https://github.com/exploration/EXTROVRT-Control) for more detailed setup instructions to make that work.
+
+If you just want one robot, you can pretty easily set up the Adafruit IO interface. The way that works is this: You [set up a feed](https://learn.adafruit.com/adafruit-io-basics-feeds/overview) on [Adafruit IO](http://adafruit.io) as such:
 
 ![Adafruit IO Feed Setup - Buttons with "F","B","L","R", and "S" values](Images/Adafruit_IO_Feed_Setup.png)
 
-Each button is mapped to a simple value: `F` for `Forward`, `B` for `Back`, `R` for `Right`, `L` for `Left`, and `S` for `Stop`. Each button is set up to send `S` when it is let go:
+Each button then gets mapped to a simple value: `F` for `Forward`, `B` for `Back`, `R` for `Right`, `L` for `Left`, and `S` for `Stop`. Each button is set up to send `S` when it is let go:
 
 ![Adafruit IO Button Setup](Images/Adafruit_IO_Button_Setup.png)
 
