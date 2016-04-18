@@ -53,11 +53,11 @@ Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 // NOTE: Plan on tweaking these up or down with your particular set of motors 
 //       until it works
 // 339 is bare-minimum (slowest)
-#define MOTORMIN 339
+int MOTORMIN = 332;
 // this is the "inflection point" on a CR servo where it stops in the middle
-#define MOTORSTOP 355 
+int MOTORSTOP = 355;
 // 362 is bare-maximum (slowest)
-#define MOTORMAX 366
+int MOTORMAX = 366;
 #define LEFTSERVO 0
 #define RIGHTSERVO 1
 
@@ -142,6 +142,30 @@ void loop() {
       } else if (0 == strcmp((char *)extrovrt_direction.lastread, "S")) {
         Serial.println("Stopping");
         moveWheels(MOTORSTOP, MOTORSTOP);
+      } else if (0 == strcmp((char *)extrovrt_direction.lastread, "MAXUP")) {
+        MOTORMAX += 1;
+        Serial.print("Increasing top speed to ");
+        Serial.println(MOTORMAX);
+      } else if (0 == strcmp((char *)extrovrt_direction.lastread, "MAXDOWN")) {
+        MOTORMAX -= 1;
+        Serial.print("Decreasing top speed to ");
+        Serial.println(MOTORMAX);
+      } else if (0 == strcmp((char *)extrovrt_direction.lastread, "MINUP")) {
+        MOTORMIN += 1;
+        Serial.print("Increasing min speed to ");
+        Serial.println(MOTORMIN);
+      } else if (0 == strcmp((char *)extrovrt_direction.lastread, "MINDOWN")) {
+        MOTORMIN -= 1;
+        Serial.print("Decreasing min speed to ");
+        Serial.println(MOTORMIN);
+      } else if (0 == strcmp((char *)extrovrt_direction.lastread, "STOPUP")) {
+        MOTORSTOP += 1;
+        Serial.print("Increasing motor stop to ");
+        Serial.println(MOTORSTOP);
+      } else if (0 == strcmp((char *)extrovrt_direction.lastread, "STOPDOWN")) {
+        MOTORSTOP -= 1;
+        Serial.print("Decreasing motor stop to ");
+        Serial.println(MOTORSTOP);
       }
     } 
   }
