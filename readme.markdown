@@ -27,6 +27,8 @@ Each button then gets mapped to a simple value: `F` for `Forward`, `B` for `Back
 
 ![Adafruit IO Button Setup](Images/Adafruit_IO_Button_Setup.png)
 
+For your initial setup, you may want to tweak the motor parameters so that max/min speed correspond to the "threshold" points of your servo motors. In that case, you should put in a "text" block so you can send the `MINUP`,`MINDOWN`,`MAXUP`,`MAXDOWN`,`STOPUP`, and `STOPDOWN` commands to the device. Make sure to record the motor values that work for you and hard-code them into the sketch so you won't have to adjust them every time you reset the device!
+
 The Huzzah ESP8266 board will connect to your wifi, then connect to your Adafruit IO feed using [MQTT](https://learn.adafruit.com/mqtt-adafruit-io-and-you/overview). It monitors the feed for changes in direction, and sends motor information to the servos through the servo board. In practice, this all happens very darned close to real-time: close enough to work great! Until you hit the Adafruit IO API limit :/ But for the price of free, who's complaining?
 
 
@@ -34,9 +36,11 @@ The Huzzah ESP8266 board will connect to your wifi, then connect to your Adafrui
 ### Parts + Assembly
 You can get all of the parts for EXTROVRT at this [wishlist](https://www.adafruit.com/wishlists?wid=391765) here. I've included M4 nuts + bolts, although you may already have those or wish to use some sort of imperially-measured malarky.
 
-You need two batteries/battery systems: a 3.3V LiPo to power the Huzzah! board, and something >5V to power the servo board. On the wishlist above, you'll see a 4xAA battery holder, and a 5V step-down UBEC to convert power to an even 5V / 3A. On my particular robot, I opted for a 2S (~7.3V) LiPo battery instead of the 4xAA holder, but that's only because I have those batteries (and chargers) lying about from other projects. If you have RC batteries, you may prefer to use those, but if you don't it's generally easier to stick with AA, because everybody has those.
+You need a battery source that's above 5V and capable of handling something in the range of 1 ampere of current at 5V - 5 watts of power. You could use an RC LiPo battery, or a simple 4xAA battery holder - anything is fine, as long as you send its output into the UBEC (buck converter) to get a stable 5 volt power source for the devices.
 
-Electronics-wise, you plug the servo "wing" on top of the Feather Huzzah! Then you plug your left servo motor into position "0", and the right motor into position "1". Make sure to note which end is the signal end (the yellow one)! For power, plug the output of the UBEC into the servo wing (I [used jumpers](Images/DSC_1713.JPG) from the 3-pin servo cable), and your 3.7V LiPo battery into the Huzzah!
+On my particular robot, I opted for a 2S (~7.3V) LiPo battery instead of the 4xAA holder, but that's only because I have those batteries (and chargers) lying about from other projects. If you have RC batteries, you may prefer to use those, but if you don't it's generally easier to stick with AA, because everybody has those.
+
+Electronics-wise, you plug the servo "wing" on top of the Feather Huzzah! Then you plug your left servo motor into position "0", and the right motor into position "1". Make sure to note which end is the signal end (the yellow one)! For power, you want to connect the `USB` and `GND` pins on the Adafruit Feather, as well as the `+` and `-` pins from the Adafruit Servo Wing (the screw terminals), to the 5V output of the UBEC. On my devices, I install a power switch between the two so that I don't have to unplug any cables to turn the thing on + off.
 
 Physically, the entire robot is built around [this anodyzed aluminum chassis](https://www.adafruit.com/products/2943), two continuous-rotation micro servos with matching wheels, and a swivel-wheel for the front. The parts that hold the phone/tablet are all 3d-printed and bolted on (see below for details).
 
