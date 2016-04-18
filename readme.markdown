@@ -38,6 +38,8 @@ You can get all of the parts for EXTROVRT at this [wishlist](https://www.adafrui
 
 You need a battery source that's above 5V and capable of handling something in the range of 1 ampere of current at 5V - 5 watts of power. You could use an RC LiPo battery, or a simple 4xAA battery holder - anything is fine, as long as you send its output into the UBEC (buck converter) to get a stable 5 volt power source for the devices.
 
+(As an aside about power draw, my testing showed that the Huzzah draws about a continuous 0.05A or 50mA while idle, and the servos both running (normal speed) draws about 0.35A or 350mA. I imagine even if you maxed out the speed of these mini-servos, you'd still be within the 500mA spec of USB, let alone the spec of what a 7.2V 2S RC LiPo battery could attain.)
+
 On my particular robot, I opted for a 2S (~7.3V) LiPo battery instead of the 4xAA holder, but that's only because I have those batteries (and chargers) lying about from other projects. If you have RC batteries, you may prefer to use those, but if you don't it's generally easier to stick with AA, because everybody has those.
 
 Electronics-wise, you plug the servo "wing" on top of the Feather Huzzah! Then you plug your left servo motor into position "0", and the right motor into position "1". Make sure to note which end is the signal end (the yellow one)! For power, you want to connect the `USB` and `GND` pins on the Adafruit Feather, as well as the `+` and `-` pins from the Adafruit Servo Wing (the screw terminals), to the 5V output of the UBEC. On my devices, I install a power switch between the two so that I don't have to unplug any cables to turn the thing on + off.
