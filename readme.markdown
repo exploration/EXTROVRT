@@ -34,23 +34,31 @@ The Huzzah ESP8266 board will connect to your wifi, then connect to your Adafrui
 
 ## How Do I Build It?
 ### Parts + Assembly
-You can get all of the parts for EXTROVRT at this [wishlist](https://www.adafruit.com/wishlists?wid=391765) here. I've included M4 nuts + bolts, although you may already have those or wish to use some sort of imperially-measured malarky.
-
-You need a battery source that's above 5V and capable of handling something in the range of 1 ampere of current at 5V - 5 watts of power. You could use an RC LiPo battery, or a simple 4xAA battery holder - anything is fine, as long as you send its output into the UBEC (buck converter) to get a stable 5 volt power source for the devices.
-
-(As an aside about power draw, my testing showed that the Huzzah draws about a continuous 0.05A or 50mA while idle, and the servos both running (normal speed) draws about 0.35A or 350mA. I imagine even if you maxed out the speed of these mini-servos, you'd still be within the 500mA spec of USB, let alone the spec of what a 7.2V 2S RC LiPo battery could attain.)
-
-On my particular robot, I opted for a 2S (~7.3V) LiPo battery instead of the 4xAA holder, but that's only because I have those batteries (and chargers) lying about from other projects. If you have RC batteries, you may prefer to use those, but if you don't it's generally easier to stick with AA, because everybody has those.
-
-Electronics-wise, you plug the servo "wing" on top of the Feather Huzzah! Then you plug your left servo motor into position "0", and the right motor into position "1". Make sure to note which end is the signal end (the yellow one)! For power, you want to connect the `USB` and `GND` pins on the Adafruit Feather, as well as the `+` and `-` pins from the Adafruit Servo Wing (the screw terminals), to the 5V output of the UBEC. On my devices, I install a power switch between the two so that I don't have to unplug any cables to turn the thing on + off.
+You can get all of the parts for EXTROVRT at this [wishlist](https://www.adafruit.com/wishlists?wid=391765) here.
 
 Physically, the entire robot is built around [this anodyzed aluminum chassis](https://www.adafruit.com/products/2943), two continuous-rotation micro servos with matching wheels, and a swivel-wheel for the front. The parts that hold the phone/tablet are all 3d-printed and bolted on (see below for details).
 
+
+### Power
+You need a battery source that's 5V and capable of handling something in the range of 500mA of current at 5V - 2.5 watts of power. The easiest way to accomplish this is to use a simple [USB Battery Pack](https://www.adafruit.com/products/1959) such as you might use for charging a phone, plugged right into the Feather Huzzah! You'll need to connect the `USB` and `GND` pins to the `+` and `-` screw terminals from the Adafruit Servo Wing to forward the power from USB to the servos (see power draw notes below).
+
+You could alternately use an RC LiPo battery, or a simple 4xAA battery holder - anything is fine, but for this to work you'll have to connect a [UBEC](https://www.adafruit.com/products/1385) (buck converter) to the `USB` and `GND` pins on the Adafruit Feather, as well as the `+` and `-` pins from the Adafruit Servo Wing (the screw terminals) to get a stable 5 volt power source for the devices. Then connect your battery configuration to the other end of the UBEC.
+
+(As an aside about power draw, my testing showed that the Huzzah draws about a continuous 0.05A or 50mA while idle, and the servos both running (normal speed) draws about 0.35A or 350mA. I imagine even if you maxed out the speed of these mini-servos, you'd still be within the 500mA spec of USB, let alone the spec of what a 7.2V 2S RC LiPo battery could attain.)
+
+On my particular robot, I opted for a 2S (~7.3V) LiPo battery instead of the 4xAA holder, but that's only because I have those batteries (and and UBEC, and chargers) lying about from other projects. If you have RC batteries, you may prefer to use those, but most people will probably be happiest with just using a USB battery pack, since those are the most re-usable for other purposes when you're not EXTROVRT'ing.
+
+
+### Wiring
+Electronics-wise, you plug the servo "wing" on top of the Feather Huzzah! As noted above, you want to connect the `USB` and `GND` pins on the Adafruit Feather to the `+` and `-` pins from the Adafruit Servo Wing (the screw terminals) (and also to the 5V output of the UBEC if you're using one). On my devices, I install a power switch between the UBEC and the electronics so that I don't have to unplug any cables to turn the thing on + off.
+
+
 ### Arduino
-The Arduino files are in the `Arduino` folder. You just have to modify them to match your WiFi network SSID/password, and your particular Adafruit IO feed information. If you don't know how to upload Arduino code to the board, [this tutorial](https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/overview) is exceedingly helpful.
+The Arduino files are in the `Arduino` folder of this repository. You simply have to modify them to match your WiFi network SSID/password, and your particular Adafruit IO feed information. If you don't know how to upload Arduino code to the board, [this tutorial](https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/overview) is exceedingly helpful.
+
 
 ### 3D Printing
-Everything that's orange in the picutres is a 3d-printed thing. You'll need to print your own copy of those. You want two of the "arms", one top plate, and one base.
+Everything that's orange in the pictures is a 3d-printed thing. You'll need to print your own copy of those. You want two of the "arms", one top plate, and one base.
 
 The CAD sources for the 3D-printed files are publicly available at [OnShape](https://cad.onshape.com/documents/d73cca1ae031f4b278264cff/w/0abe2b13ef53c6019a28a62a), which is handy if you want to fiddle with the models for your own setup.
 
